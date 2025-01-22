@@ -1,0 +1,90 @@
+To create a project architecture diagram for your project, we can break down the various components and their interactions. Based on the provided code, here’s how we can structure the architecture of your project:
+
+1. User Interface (UI)
+Tkinter GUI:
+Displays the main window and handles user interactions.
+Contains labels, buttons, and a canvas for visualization.
+Displays dynamic content (energy levels, plant images, and flow charts).
+2. Energy Simulation Components
+Energy Production Simulation:
+Simulates sensor data to generate random energy values (spike and decay) for a plant.
+Simulates energy production for multiple plants (up to 100 plants).
+3. Matplotlib Integration
+Charts and Graphs:
+Displays live charts of energy levels over time using Matplotlib.
+Chart updates dynamically with energy data.
+Can display charts for single plant or multiple plants (up to 100 plants).
+4. Energy Management
+Flywheel Simulation:
+Simulates the energy storage in a flywheel based on current energy production.
+Battery Storage:
+Stores energy when energy production exceeds the baseline.
+Discharges when energy is lower than the baseline.
+5. Control and Update Mechanisms
+Start/Stop Updates:
+Buttons to control the start and stop of live energy data updates.
+Triggers the simulation of energy spikes and decay.
+Continuous Updates:
+Periodically updates the energy data and UI components to simulate real-time energy production.
+6. External Interactions
+Images:
+Loads images to represent the plant's open and closed states.
+Updates images based on energy status (open for baseline, closed for spike).
+Project Architecture Diagram
+The architecture diagram can be visualized as follows:
+
+plaintext
+Copy code
++----------------------------------+
+|           Main Window            |
+|----------------------------------|
+| [Label]  - "Welcome to Mimosa"   |
+| [Canvas] - Energy Visualization  |
+| [Button] - Start / Stop Updates  |
+| [Button] - Show Flow Chart       |
++----------------------------------+
+         |               |
+  +------------------+    +------------------------+
+  | Energy Simulation |    | Matplotlib Integration |
+  +------------------+    +------------------------+
+  |  - Simulate Sensor|    |  - Line Chart          |
+  |    Data           |    |  - Multiple Plant Chart|
+  |  - Energy Spike   |    |  - Real-time Updates   |
+  |  - Decay to Base  |    |  - Legend/Annotations  |
+  |    Energy         |    +------------------------+
+  +------------------+
+         |
++-----------------------------------+
+|        Energy Management          |
+|-----------------------------------|
+|  - Flywheel Simulation           |
+|  - Battery Storage               |
++-----------------------------------+
+         |
++-------------------------------+
+|          External Images       |
+|-------------------------------|
+|  - Open / Close Plant Images  |
++-------------------------------+
+Explanation:
+Main Window:
+
+The Tkinter window that holds the UI elements like labels, buttons, and the canvas for chart visualization.
+Energy Simulation:
+
+Simulates the energy production and decay cycle for a single plant.
+Can simulate up to 100 plants by adjusting the energy values.
+Matplotlib Integration:
+
+Responsible for creating the charts that display energy levels over time.
+Updates dynamically with new energy data from the simulation.
+Energy Management:
+
+Includes the simulation of the flywheel and battery storage, reflecting the energy produced and stored during the simulation.
+External Images:
+
+The plant images (open and closed) are shown based on the energy level, with Tkinter managing the image display.
+This is a high-level overview, and each block in the diagram corresponds to a section of your code. You can use a diagram tool like Lucidchart, Draw.io, or Figma to create this visual representation. Let me know if you'd like further adjustments!
+
+
+
